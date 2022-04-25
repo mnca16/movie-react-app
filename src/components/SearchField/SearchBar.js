@@ -30,25 +30,28 @@ const SearchBar = () => {
   // search for content in array object
   //  I want to search for the movie titles that are in data
   // I want the user to be able to search find the movie data based of the intial spelling of the movies
-    const handlerOnChange = (event) => {
-        const result = movieData.filter((movie) => {
-          // want to get user input not static code
-          movie.title.startsWith(event.target.value);
-          //console.log(movie.title);
-        })
+ 
+  const [title, setTitle] = React.useState('')
 
+  const [userResults, setUserResults] = React.useState('')
 
-        console.log(`result on the filter method => ${result}`);
-    }
-    
-    const [title, setTitle] = React.useState('')
+  const filter = (event) => {
+    const keyword = event.target.value
 
-    const [userResults, setUserResults] = React.useState('')
+    if(keyword !== '') {
+      const result = movieData.filter((movie) => {
+      return movie.title.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
+    });
+    setUserResults(result)
+
+   
+  }
+   
 
     return (
         <div>
         <label htmlFor="search">Search a movie you like!</label>
-        <input id="search" onChange={handlerOnChange}/>
+        <input id="search" onChange={filter}/>
         </div>
     )
 
