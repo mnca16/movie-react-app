@@ -31,18 +31,18 @@ const SearchBar = () => {
   //  I want to search for the movie titles that are in data
   // I want the user to be able to search find the movie data based of the intial spelling of the movies
  
-  const [title, setTitle] = React.useState('')
+  // const [title, setTitle] = React.useState('')
 
-  const [userResults, setUserResults] = React.useState('')
+  // const [userResults, setUserResults] = React.useState('')
 
-  const filter = (event) => {
-    const keyword = event.target.value
+  // const filter = (event) => {
+  //   const keyword = event.target.value
 
-    if(keyword !== '') {
-      const result = movieData.filter((movie) => {
-      return movie.title.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
-    });
-    setUserResults(result)
+  //   if(keyword !== '') {
+  //     const result = movieData.filter((movie) => {
+  //     return movie.title.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
+  //   });
+  //   setUserResults(result)
 
    
   }
@@ -51,7 +51,7 @@ const SearchBar = () => {
     return (
         <div>
         <label htmlFor="search">Search a movie you like!</label>
-        <input id="search" onChange={filter}/>
+        <input id="search" onChange={handlet}/>
         </div>
     )
 
