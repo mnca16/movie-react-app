@@ -4,6 +4,7 @@ import axios from "axios";
 // search field
 
 const SearchBar = () => {
+<<<<<<< HEAD
   const [searchInput, setSearchInput] = useState("");
   const [movieData, setMovieData] = useState([]);
 
@@ -23,6 +24,28 @@ const SearchBar = () => {
       console.log(response); //causes infinite data collection
     }); // the [] prevents the issue above
   }, []);
+=======
+  // search for content in array object
+  //  I want to search for the movie titles that are in data
+  // I want the user to be able to search find the movie data based of the intial spelling of the movies
+ 
+  // const [title, setTitle] = React.useState('')
+
+  // const [userResults, setUserResults] = React.useState('')
+
+  // const filter = (event) => {
+  //   const keyword = event.target.value
+
+  //   if(keyword !== '') {
+  //     const result = movieData.filter((movie) => {
+  //     return movie.title.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
+  //   });
+  //   setUserResults(result)
+
+   
+  }
+   
+>>>>>>> main
 
   const searchMovies = (searchValue) => {
     // const movieData = searchValue.target.value;
@@ -42,6 +65,7 @@ const SearchBar = () => {
     <div>
       <div className="search-field">
         <label htmlFor="search">Search a movie you like!</label>
+<<<<<<< HEAD
         <input
           type="search"
           onChange={(event) => searchMovies(event.target.value)}
@@ -52,6 +76,16 @@ const SearchBar = () => {
           <button type="button">Enter</button>
         </span>
       </div>
+=======
+        <input id="search" onChange={handlet}/>
+        </div>
+    )
+
+
+
+
+}
+>>>>>>> main
 
       {/* <div className="movie-list">
         {userResults && userResults.legnth > 0 ? (
